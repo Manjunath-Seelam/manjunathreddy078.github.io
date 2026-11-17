@@ -111,13 +111,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Subtle Profile Glow Effect on Scroll
-  const profilePhoto = document.querySelector('.profile-photo');
-  if (profilePhoto) {
+  // 4. Subtle Profile Depth Parallax on Scroll (maintains crisp vertical alignment)
+  const profileContainer = document.querySelector('.profile-container');
+  if (profileContainer) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       if (scrollY < 600) {
-        profilePhoto.style.transform = `scale(${1 + scrollY * 0.0002}) rotate(${scrollY * 0.015}deg)`;
+        profileContainer.style.transform = `translateY(${scrollY * 0.04}px)`;
       }
     }, { passive: true });
   }
